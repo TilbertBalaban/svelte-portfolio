@@ -1,6 +1,18 @@
-<!-- <button class={`btn ${className}`} {...props}>
+<script lang="ts">
+  import type { Snippet } from "svelte";
+
+  type Props = {
+    children: Snippet;
+    className?: string;
+    onclick: () => void;
+  };
+
+  const { children, className, ...props }: Props = $props();
+</script>
+
+<button class={`btn ${className}`} {...props}>
     {@render children()}
-</button> -->
+</button>
 
 <style>
   .btn {

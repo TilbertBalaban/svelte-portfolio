@@ -1,12 +1,24 @@
+<script lang="ts">
+  import SectionHeadline from "src/lib/components/SectionHeadline.svelte";
+  import ExperienceTable from "src/lib/components/ExperienceTable.svelte";
+  import image from "src/assets/about-me.jpeg";
+  import Button from "src/lib/components/Button.svelte";
+  import { goto } from "$app/navigation";
+
+  const onclick = () => {
+    goto("/#contact");
+  }
+
+  const workExperience: any[] = []
+</script>
 
 <section class="about-me mt-l">
-  <!-- <SectionHeadline sectionName={"about-me"}>About Me</SectionHeadline> -->
+  <SectionHeadline sectionName={"about-me"}>About Me</SectionHeadline>
   <div class="mt-m content-container default-margin">
-    <!-- <img class="image" src={image} alt="" /> -->
+    <img class="image" src={image} alt="" />
     <div class="text">
       <p>
-        Hey, I'm Niklas, the driving force behind my freelancing agency
-        specializing in web development and data science.
+        Hey, I'm Tilbert, specialist in web development.
       </p>
       <p>
         With years of hands-on experience tackling real-world coding challenges
@@ -23,10 +35,10 @@
         your development journey. If you're eager to learn from real-world
         experience and practical know-how, let's dive in together.
       </p>
-      <!-- <Button className="mt-m" {onclick}>Tell me about your project</Button> -->
+      <Button className="mt-m" {onclick}>Tell me about your project</Button>
     </div>
   </div>
-  <!-- <ExperienceTable {workExperience} /> -->
+  <ExperienceTable {workExperience} />
 </section>
 
 <style>

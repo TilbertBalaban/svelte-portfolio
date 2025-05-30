@@ -1,6 +1,14 @@
+<script lang="ts">
+  type Props = {
+    workExperience: any[]
+  };
+
+  const { workExperience }: Props = $props();
+</script>
+
 <section class="default-margin work-experience mt-m">
   <ul class="work-experience-list">
-    <!-- {#each workExperience as job}
+    {#each workExperience as job}
       <li class="work-item">
         <article>
           <h3 class="semi-bold mb-xs">{job.jobTitle}</h3>
@@ -17,7 +25,7 @@
           </div>
         </article>
       </li>
-    {/each} -->
+    {/each}
   </ul>
   <h2 class="headline">Past work <br /> Experience</h2>
 </section>
