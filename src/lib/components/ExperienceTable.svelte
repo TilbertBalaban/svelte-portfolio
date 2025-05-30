@@ -1,17 +1,19 @@
 <script lang="ts">
-  type Props = {
-    workExperience: any[]
-  };
+  import type { DevExperience } from "../types/sanity";
 
-  const { workExperience }: Props = $props();
+   type Props = {
+    developmentExperience: DevExperience[]
+  }
+
+  const { developmentExperience }:Props = $props();
 </script>
 
 <section class="default-margin work-experience mt-m">
   <ul class="work-experience-list">
-    {#each workExperience as job}
+    {#each developmentExperience as job}
       <li class="work-item">
         <article>
-          <h3 class="semi-bold mb-xs">{job.jobTitle}</h3>
+          <h3 class="semi-bold mb-xs">{job.title}</h3>
           <div class="company-and-date">
             <p>{job.company}</p>
             <p class="dark-grey">

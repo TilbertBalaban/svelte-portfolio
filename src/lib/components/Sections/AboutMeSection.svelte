@@ -4,12 +4,17 @@
   import image from "src/assets/about-me.jpeg";
   import Button from "src/lib/components/Button.svelte";
   import { goto } from "$app/navigation";
+  import type { DevExperience } from "src/lib/types/sanity";
+
+  type Props = {
+    developmentExperience: DevExperience[]
+  }
 
   const onclick = () => {
     goto("/#contact");
   }
 
-  const workExperience: any[] = []
+  const { developmentExperience }: Props = $props();
 </script>
 
 <section class="about-me mt-l">
@@ -38,7 +43,7 @@
       <Button className="mt-m" {onclick}>Tell me about your project</Button>
     </div>
   </div>
-  <ExperienceTable {workExperience} />
+  <ExperienceTable {developmentExperience} />
 </section>
 
 <style>
