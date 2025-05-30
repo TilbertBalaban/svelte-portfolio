@@ -1,7 +1,7 @@
-import type { PreparedProject } from './../../../lib/types/sanity.d';
-import { prepareProjectEntry, client as sanityClient } from 'src/lib/utils/sanity';
+import type { PreparedProject } from '$types/sanity.d.ts';
+import { prepareProjectEntry, client as sanityClient } from  "$lib/utils/sanity";
 import type { PageLoad } from './$types';
-import type { Project } from 'src/lib/types/sanity';
+import type { Project } from '$types/sanity.d.ts';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({

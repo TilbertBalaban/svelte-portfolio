@@ -1,9 +1,9 @@
 <script>
-  import HeroSection from 'src/lib/components/sections/HeroSection.svelte'
-  import AboutMeSection from 'src/lib/components/sections/AboutMeSection.svelte';
-  import MyWorkSection from 'src/lib/components/sections/MyWorkSection.svelte';
-  import SkillsSection from 'src/lib/components/sections/SkillsSection.svelte';
-  import ContactSection from 'src/lib/components/sections/ContactSection.svelte';
+  import HeroSection from '$components/sections/HeroSection.svelte';
+  import AboutMeSection from '$components/sections/AboutMeSection.svelte';
+  import MyWorkSection from '$components/sections/MyWorkSection.svelte';
+  import SkillsSection from '$components/sections/SkillsSection.svelte';
+  import ContactSection from '$components/sections/ContactSection.svelte';
 
   const { data } = $props();
   const { developmentExperience, projects, skills } = data;

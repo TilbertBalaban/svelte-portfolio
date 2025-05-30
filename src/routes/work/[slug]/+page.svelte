@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { PreparedTextContent } from 'src/lib/types/sanity';
+  import type { PreparedTextContent } from '$types/sanity.d.ts';
 
   const { data } = $props();
   const { project } = data;
@@ -19,8 +19,6 @@
 
     return style
   };
-
-  console.log('qqq', content)
 </script>
 
 <main class="default-margin work-page">

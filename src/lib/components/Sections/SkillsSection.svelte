@@ -1,6 +1,6 @@
 <script lang="ts">
-  import SectionHeadline from '$lib/components/SectionHeadline.svelte';
-    import type { Skill } from 'src/lib/types/sanity';
+  import SectionHeadline from '$components/SectionHeadline.svelte';
+    import type { Skill } from '$types/sanity.d.ts';
   
   type Props = {
     skills: Skill[]

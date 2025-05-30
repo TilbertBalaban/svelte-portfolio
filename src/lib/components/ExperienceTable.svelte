@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { DevExperience } from "../types/sanity";
+  import type { DevExperience } from "$types/sanity.d.ts";
 
    type Props = {
     developmentExperience: DevExperience[]

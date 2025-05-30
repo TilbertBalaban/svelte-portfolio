@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import Button from 'src/lib/components/Button.svelte';
+  import Button from '$components/Button.svelte';
 
   const onclick = () => {
     goto('/#contact');

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import SectionHeadline from "src/lib/components/SectionHeadline.svelte";
-  import ExperienceTable from "src/lib/components/ExperienceTable.svelte";
-  import image from "src/assets/about-me.jpeg";
-  import Button from "src/lib/components/Button.svelte";
   import { goto } from "$app/navigation";
-  import type { DevExperience } from "src/lib/types/sanity";
+  import SectionHeadline from "$components/SectionHeadline.svelte";
+  import ExperienceTable from "$components/ExperienceTable.svelte";
+  import image from "$assets/about-me.jpeg";
+  import Button from "$components/Button.svelte";
+  import type { DevExperience } from "$types/sanity.d.ts";
 
   type Props = {
     developmentExperience: DevExperience[]

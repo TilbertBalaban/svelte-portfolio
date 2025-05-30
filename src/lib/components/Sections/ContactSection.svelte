@@ -1,6 +1,6 @@
 <script lang="ts">
-  import SectionHeadline from "src/lib/components/SectionHeadline.svelte";
-    import Button from "../Button.svelte";
+  import SectionHeadline from "$components/SectionHeadline.svelte";
+  import Button from "$components/Button.svelte";
 
   let contactName = $state("");
   let contactMail = $state("");
