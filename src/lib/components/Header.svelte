@@ -1,9 +1,19 @@
+<script lang="ts">
+  import { goto } from "$app/navigation";
+  import Button from "src/lib/components/Button.svelte";
+
+  const goToContactForm = () => {
+    goto("/#contact");
+  };
+</script>
+
+
 <nav class="navbar default-margin">
-  <a href="/" class="logo">NF</a>
+  <a href="/" class="logo">TB</a>
   <div class="navbar-links">
     <a href="/#about-me" class="nav-link">About Me</a>
     <a href="/#my-work" class="nav-link">Work</a>
-    <!-- <Button className="nav-bar" onclick={goToContactForm}>Contact</Button> -->
+    <Button className="nav-bar" onclick={goToContactForm}>Contact</Button>
   </div>
 </nav>
 
