@@ -1,3 +1,62 @@
+<section class="mt-l">
+  <!-- <SectionHeadline sectionName="contact-form">Let's talk</SectionHeadline> -->
+  <div class="form-container default-margin mt-m">
+    <!-- {#if isEmailSent}
+      <div class="spinner-container">
+        <h3>
+          Thank you for getting in contact with me. I'll usually reply within 48
+          hours.
+        </h3>
+      </div>
+    {:else if isLoading}
+      <div class="spinner-container">
+        <div class="spinner"></div>
+        <h3>Sending off the contact form.</h3>
+      </div>
+    {:else if showErrorMessage}
+      <h3>
+        We seem to have trouble with our server at the moment. Please send me an
+        email directly to <a class="link" href="mailto:niklas@kizo-agency.com">
+          niklas@kizo-agency.com
+        </a>
+      </h3>
+    {:else}
+      <form>
+        <input
+          class="text-input mb-m"
+          class:input-error={isFormInvalid && !Boolean(contactName.length)}
+          placeholder="Your Name"
+          bind:value={contactName}
+        />
+        <input
+          class="text-input mb-m"
+          class:input-error={isFormInvalid && !Boolean(contactMail.length)}
+          placeholder="Your Email"
+          bind:value={contactMail}
+        />
+        <textarea
+          placeholder="Tell me what's up."
+          class:input-error={isFormInvalid &&
+            !Boolean(informationAboutProject.length)}
+          bind:value={informationAboutProject}
+        ></textarea>
+        <Button onclick={onSubmit}>Submit</Button>
+      </form>
+    {/if} -->
+    <div class="form-text">
+      <h3 class="bold mb-s">Talk to me about your project</h3>
+      <p>
+        I'm always excited to hear about new and innovative ideas! Whether
+        you're in the early stages of planning or have a well-defined project,
+        I'm here to help bring your vision to life. Feel free to drop me a
+        message with some details about your project, and let's start a
+        conversation about how we can work together. I look forward to
+        connecting with you and discussing the possibilities. Talk to you soon!
+      </p>
+    </div>
+  </div>
+</section>
+
 <style>
   section {
     padding-bottom: 140px;

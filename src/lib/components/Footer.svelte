@@ -1,3 +1,27 @@
+<footer class="footer">
+  <div class="footer-container">
+    <h3 class="semi-bold mb-xs">Niklas Fischer</h3>
+    <div class="mb-l">
+      <a
+        href="https://github.com/yourusername"
+        target="_blank"
+        class="footer-link">GitHub</a
+      >
+      <a
+        href="https://linkedin.com/yourusername"
+        target="_blank"
+        class="footer-link">LinkedIn</a
+      >
+      <a
+        href="https://twitter.com/yourusername"
+        target="_blank"
+        class="footer-link">Twitter</a
+      >
+    </div>
+    <p>© 2025 Tilbert Balaban. All rights reserved.</p>
+  </div>
+</footer>
+
 <style>
   .footer {
     background-color: black;

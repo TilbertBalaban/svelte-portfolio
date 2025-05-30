@@ -1,3 +1,7 @@
+<!-- <button class={`btn ${className}`} {...props}>
+    {@render children()}
+</button> -->
+
 <style>
   .btn {
     font-family: "Inter Tight", sans-serif;
