@@ -1,5 +1,15 @@
+<script lang="ts">
+  import SectionHeadline from '$lib/components/SectionHeadline.svelte';
+    import type { Skill } from 'src/lib/types/sanity';
+  
+  type Props = {
+    skills: Skill[]
+  }
 
-<!-- <section class="mt-l">
+  const { skills }: Props = $props();
+</script>
+
+<section class="mt-l">
   <SectionHeadline sectionName="skills">Skills</SectionHeadline>
   <div class="wrapper default-margin">
     <div class="skills-container mt-m">
@@ -8,7 +18,7 @@
       {/each}
     </div>
   </div>
-</section> -->
+</section>
 
 <style>
   .wrapper {

@@ -1,8 +1,33 @@
-<!-- <main class="default-margin work-page">
+<script lang="ts">
+    import type { PreparedTextContent } from 'src/lib/types/sanity';
+
+  const { data } = $props();
+  const { project } = data;
+  const {
+    name,
+    company,
+    dateAccomplished,
+    stack,
+    content,
+    imageUrl
+  } = project;
+
+  const getTagFromStyle = (style: PreparedTextContent['style']): string => {
+    if (style === 'normal') {
+      return 'p';
+    } 
+
+    return style
+  };
+
+  console.log('qqq', content)
+</script>
+
+<main class="default-margin work-page">
   <h4>{company}</h4>
   <div class="underscore"></div>
   <h2 class="mb-s">{name}</h2>
-  <img class="project-image" src={projectImageUrl} alt="" />
+  <img class="project-image" src={imageUrl} alt="" />
   <div class="project-container mt-m">
     <div class="meta-data">
       <h3 class="semi-bold">Date</h3>
@@ -17,16 +42,16 @@
     <div class="project-text">
       {#each content as block}
         {#if block.type === "text"}
-          <svelte:element this={getTagFromStyle(block.style)}
-            >{block.textToRender}</svelte:element
-          >
+          <svelte:element this={getTagFromStyle(block.style)}>
+            {block.textToRender}
+          </svelte:element>
         {:else}
           <img class="content-image" src={block.url} alt="" />
         {/if}
       {/each}
     </div>
   </div>
-</main> -->
+</main>
 
 <style>
   .work-page {

@@ -4,7 +4,7 @@
   type Props = {
     children: Snippet;
     className?: string;
-    onclick: () => void;
+    onclick: (e: Event) => void;
   };
 
   const { children, className, ...props }: Props = $props();

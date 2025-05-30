@@ -1,7 +1,67 @@
+<script lang="ts">
+  import SectionHeadline from "src/lib/components/SectionHeadline.svelte";
+    import Button from "../Button.svelte";
+
+  let contactName = $state("");
+  let contactMail = $state("");
+  let informationAboutProject = $state("");
+  let showValidation = $state(false);
+  let isFormInvalid = $derived(
+    !contactName.length ||
+    !contactMail.length ||
+    !informationAboutProject.length
+  );
+
+  let isEmailSent = $state(false);
+  let isLoading = $state(false);
+  let showErrorMessage = $state(false);
+
+  const onSubmit = async (e: Event) => {
+   
+    e.preventDefault();
+    showValidation = true;
+
+
+    if (isFormInvalid) {
+      return;
+    }
+
+    console.log('qqq')
+    isLoading = true;
+    await fetch('api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: contactName,
+        email: contactMail,
+        message: informationAboutProject,
+      }),
+    }).then((response) => {
+       console.log('qqq', response)
+      if (response.ok) {
+        isEmailSent = true;
+      } else {
+        showErrorMessage = true;
+      }
+    }).catch((e) => {
+       console.log('qqq', e)
+      showErrorMessage = true;
+    }).finally(() => {
+       console.log('qqq')
+      isLoading = false;
+      contactName = "";
+      contactMail = "";
+      informationAboutProject = "";
+    })
+  }
+</script>
+
 <section class="mt-l">
-  <!-- <SectionHeadline sectionName="contact-form">Let's talk</SectionHeadline> -->
+  <SectionHeadline sectionName="contact-form">Let's talk</SectionHeadline>
   <div class="form-container default-margin mt-m">
-    <!-- {#if isEmailSent}
+    {#if isEmailSent}
       <div class="spinner-container">
         <h3>
           Thank you for getting in contact with me. I'll usually reply within 48
@@ -16,33 +76,32 @@
     {:else if showErrorMessage}
       <h3>
         We seem to have trouble with our server at the moment. Please send me an
-        email directly to <a class="link" href="mailto:niklas@kizo-agency.com">
-          niklas@kizo-agency.com
+        email directly to <a class="link" href="tilbert.balaban@gmail.com">
+          tilbert.balaban@gmail.com
         </a>
       </h3>
     {:else}
       <form>
         <input
           class="text-input mb-m"
-          class:input-error={isFormInvalid && !Boolean(contactName.length)}
+          class:input-error={isFormInvalid && showValidation && !Boolean(contactName.length)}
           placeholder="Your Name"
           bind:value={contactName}
         />
         <input
           class="text-input mb-m"
-          class:input-error={isFormInvalid && !Boolean(contactMail.length)}
+          class:input-error={isFormInvalid && showValidation && !Boolean(contactMail.length)}
           placeholder="Your Email"
           bind:value={contactMail}
         />
         <textarea
           placeholder="Tell me what's up."
-          class:input-error={isFormInvalid &&
-            !Boolean(informationAboutProject.length)}
+          class:input-error={isFormInvalid && showValidation && !Boolean(informationAboutProject.length)}
           bind:value={informationAboutProject}
         ></textarea>
         <Button onclick={onSubmit}>Submit</Button>
       </form>
-    {/if} -->
+    {/if}
     <div class="form-text">
       <h3 class="bold mb-s">Talk to me about your project</h3>
       <p>

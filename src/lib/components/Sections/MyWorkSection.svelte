@@ -1,9 +1,24 @@
+<script lang="ts">
+  import SectionHeadline from '$lib/components/SectionHeadline.svelte';
+    import type { PreparedProject } from 'src/lib/types/sanity';
+  
+  type Props = {
+    projects: PreparedProject[]
+  }
+
+  const { 
+    projects 
+  }: Props = $props();
+  const mainProject = projects[0];
+  const otherProjects = projects.slice(1);
+</script>
+
 <section class="mt-l">
-  <!-- <SectionHeadline sectionName="my-work">My Work</SectionHeadline>
+  <SectionHeadline sectionName="my-work">My Work</SectionHeadline>
   <div class="default-margin projects-container mt-m">
     <article class="main-project mb-m">
       <a href={`/work/${mainProject.slug}`}>
-        <img src={mainProject.projectImageUrl} alt={mainProject.name} />
+        <img src={mainProject.imageUrl} alt={mainProject.name} />
       </a>
       <div class="project-info mt-s">
         <div class="title-and-company">
@@ -17,7 +32,7 @@
       {#each otherProjects as project}
         <article class="project">
           <a href={`/work/${project.slug}`}>
-            <img src={project.projectImageUrl} alt={project.name} />
+            <img src={project.imageUrl} alt={project.name} />
           </a>
           <div class="project-info mt-s">
             <div class="title-and-company">
@@ -29,7 +44,7 @@
         </article>
       {/each}
     </div>
-  </div> -->
+  </div>
 </section>
 
 
