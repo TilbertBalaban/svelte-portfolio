@@ -1,38 +1,31 @@
-# create-svelte
+# Developer portfolio
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Personal portfolio site built with SvelteKit (Svelte 5) and TypeScript. Content
+(projects, work experience, skills) lives in a Sanity CMS dataset and the contact
+form sends email through SendGrid.
 
-## Creating a project
+Live: _not deployed yet_ — run it locally with the steps below.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Pages
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- `/` — hero, about me, experience table, projects, skills, contact form
+- `/work/[slug]` — a single project fetched from Sanity
+- `POST /api/send-email` — contact form handler (SendGrid)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Run locally
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
+npm install
+echo "SENDGRID_API_KEY=..." > .env
 npm run dev -- --open
 ```
 
-## Building
+Sanity project id and dataset are set in `src/lib/utils/sanity.ts`.
 
-To create a production version of your app:
+## Scripts
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Vite dev server |
+| `npm run build` / `preview` | Production build / serve the build |
+| `npm run check` | `svelte-check` type check |
